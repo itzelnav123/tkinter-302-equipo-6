@@ -232,7 +232,6 @@ def eliminar():
     except mysql.connector.Error as error:
         messagebox.showerror("Error", str(error))
 
-# Gutierrez Romero Valentina: Botón Limpiar
 def limpiar():
     global id_seleccionado
 
@@ -314,7 +313,7 @@ tk.Button(marco_botones, text="Guardar", command=guardar, bg="#059669", fg="whit
 tk.Button(marco_botones, text="Consultar", command=consultar, bg="#475569", fg="white", width=12).grid(row=0, column=2, padx=4)
 tk.Button(marco_botones, text="Actualizar", command=actualizar, bg="#D97706", fg="white", width=12).grid(row=0, column=3, padx=4)
 tk.Button(marco_botones, text="Eliminar", command=eliminar, bg="#DC2626", fg="white", width=12).grid(row=0, column=4, padx=4)
-tk.Button(marco_botones, text="Limpiar", command=limpiar, bg="#64748B", fg="white", width=12).grid(row=0, column=5, padx=4)
+tk.Button(marco_botones, text="Limpiar los campos", command=limpiar, bg="#64748B", fg="white", width=12).grid(row=0, column=5, padx=4)
 
 tk.Label(
     ventana,
