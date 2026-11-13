@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import mysql.connector
 
+#JOSE FRANCISCO CRISTOBAL GRANADOS: Cambie colores y puse el titulo
 def conectar():
     return mysql.connector.connect(
         host="localhost",
@@ -250,27 +251,27 @@ def limpiar():
     tabla.selection_remove(tabla.selection())
 
 ventana = tk.Tk()
-ventana.title("Total de productos")
+ventana.title("Abarrotes - Total de Productos")
 ventana.geometry("950x700")
-ventana.configure(bg="#F1F5F9")
+ventana.configure(bg="#FCE7F3")
 ventana.resizable(True, True)
 
 titulo = tk.Label(
     ventana,
-    text="TOTAL DE PRODUCTOS",
+    text="ABARROTES - TOTAL DE PRODUCTOS",
     font=("Arial", 20, "bold"),
-    bg="#14243A",
+    bg="#9D174D",
     fg="white",
     pady=15
 )
 titulo.pack(fill="x")
 
-marco = tk.Frame(ventana, bg="#F1F5F9")
+marco = tk.Frame(ventana, bg="#FCE7F3")
 marco.pack(pady=20)
 
-tk.Label(marco, text="Producto", font=("Arial", 11, "bold"), bg="#F1F5F9").grid(row=0, column=0, padx=15, pady=10)
-tk.Label(marco, text="Nombre", font=("Arial", 11, "bold"), bg="#F1F5F9").grid(row=0, column=1, padx=15)
-tk.Label(marco, text="Precio", font=("Arial", 11, "bold"), bg="#F1F5F9").grid(row=0, column=2, padx=15)
+tk.Label(marco, text="Producto", font=("Arial", 11, "bold"), bg="#FCE7F3").grid(row=0, column=0, padx=15, pady=10)
+tk.Label(marco, text="Nombre", font=("Arial", 11, "bold"), bg="#FCE7F3").grid(row=0, column=1, padx=15)
+tk.Label(marco, text="Precio", font=("Arial", 11, "bold"), bg="#FCE7F3").grid(row=0, column=2, padx=15)
 
 entry_nombre1 = tk.Entry(marco, width=25, font=("Arial", 11))
 entry_precio1 = tk.Entry(marco, width=15, font=("Arial", 11))
@@ -288,7 +289,7 @@ entradas = [
 ]
 
 for i, (nombre, precio) in enumerate(entradas):
-    tk.Label(marco, text=f"Producto {i+1}", bg="#F1F5F9").grid(row=i+1, column=0, padx=15, pady=8)
+    tk.Label(marco, text=f"Producto {i+1}", bg="#FCE7F3").grid(row=i+1, column=0, padx=15, pady=8)
     nombre.grid(row=i+1, column=1, padx=15, pady=8)
     precio.grid(row=i+1, column=2, padx=15, pady=8)
 
@@ -298,30 +299,30 @@ etiqueta_resultado = tk.Label(
     ventana,
     textvariable=resultado,
     font=("Arial", 12, "bold"),
-    bg="white",
-    fg="#14243A",
+    bg="#FFF1F2",
+    fg="#9D174D",
     width=45,
     height=5,
     justify="left"
 )
 etiqueta_resultado.pack(pady=10)
 
-marco_botones = tk.Frame(ventana, bg="#F1F5F9")
+marco_botones = tk.Frame(ventana, bg="#FCE7F3")
 marco_botones.pack(pady=10)
 
-tk.Button(marco_botones, text="Total", command=mostrar_total, bg="#2563EB", fg="white", width=12).grid(row=0, column=0, padx=4)
-tk.Button(marco_botones, text="Guardar", command=guardar, bg="#059669", fg="white", width=12).grid(row=0, column=1, padx=4)
-tk.Button(marco_botones, text="Consultar", command=consultar, bg="#475569", fg="white", width=12).grid(row=0, column=2, padx=4)
-tk.Button(marco_botones, text="Actualizar", command=actualizar, bg="#D97706", fg="white", width=12).grid(row=0, column=3, padx=4)
-tk.Button(marco_botones, text="Eliminar", command=eliminar, bg="#DC2626", fg="white", width=12).grid(row=0, column=4, padx=4)
-tk.Button(marco_botones, text="Limpiar", command=limpiar, bg="#64748B", fg="white", width=12).grid(row=0, column=5, padx=4)
+tk.Button(marco_botones, text="Total", command=mostrar_total, bg="#DB2777", fg="white", width=12).grid(row=0, column=0, padx=4)
+tk.Button(marco_botones, text="Guardar", command=guardar, bg="#BE185D", fg="white", width=12).grid(row=0, column=1, padx=4)
+tk.Button(marco_botones, text="Consultar", command=consultar, bg="#9D174D", fg="white", width=12).grid(row=0, column=2, padx=4)
+tk.Button(marco_botones, text="Actualizar", command=actualizar, bg="#EC4899", fg="white", width=12).grid(row=0, column=3, padx=4)
+tk.Button(marco_botones, text="Eliminar", command=eliminar, bg="#F43F5E", fg="white", width=12).grid(row=0, column=4, padx=4)
+tk.Button(marco_botones, text="Limpiar", command=limpiar, bg="#F9A8D4", fg="#831843", width=12).grid(row=0, column=5, padx=4)
 
 tk.Label(
     ventana,
     text="REGISTROS GUARDADOS",
     font=("Arial", 13, "bold"),
-    bg="#F1F5F9",
-    fg="#14243A"
+    bg="#FCE7F3",
+    fg="#9D174D"
 ).pack(pady=10)
 
 columnas = ("ID", "Nombre 1", "Precio 1", "Nombre 2", "Precio 2", "Nombre 3", "Precio 3", "Total")
